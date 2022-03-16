@@ -49,7 +49,7 @@ class UserRegisterView(FormView):
         # enviar email con el codigo generado
         asunto = 'Confirmacion de email'
         mensaje = 'Codigo de Verificacion: ' + codigo
-        email_remitente = 'jimmyfx@elbaulforex.com'
+        email_remitente = 'elfinalzh@gmail.com'
         # 
         send_mail(asunto, mensaje, email_remitente, [form.cleaned_data['email'],])
         # redirigir a pantalla de validacion
