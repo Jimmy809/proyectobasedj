@@ -1,5 +1,7 @@
 secret.json
+db.sqlite3
 proyectobase/settings.py
+
 
 # medias
 media/*
