@@ -2,5 +2,5 @@
 
 Este repositorio es una base para nuevos proyectos en Djando
 
-###Paquetes instalados:
+### Paquetes instalados:
 - postgress
