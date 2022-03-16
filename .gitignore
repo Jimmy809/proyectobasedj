@@ -1,8 +1,12 @@
 secret.json
 proyectobase/settings.py
 
-
+# medias
 media/*
 
+# migrations
 
+
+# pycache
 proyectobase/__pycache__/*
+proyectobase/settings/__pycache__/*
