@@ -12,5 +12,6 @@ applications/users/migrations/
 # pycache
 proyectobase/__pycache__/
 applications/__pycache__/
+applications/users/__pycache__/
 proyectobase/settings/__pycache__/
 applications/users/__pycache__/
