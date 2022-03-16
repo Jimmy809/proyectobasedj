@@ -1,0 +1,8 @@
+secret.json
+proyectobase/settings.py
+
+
+media/*
+
+
+proyectobase/__pycache__/*
