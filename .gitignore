@@ -4,11 +4,13 @@ proyectobase/settings.py
 
 
 # medias
-media/*
+media/
 
 # migrations
-
+applications/users/migrations/
 
 # pycache
-proyectobase/__pycache__/*
-proyectobase/settings/__pycache__/*
+proyectobase/__pycache__/
+applications/__pycache__/
+proyectobase/settings/__pycache__/
+applications/users/__pycache__/
