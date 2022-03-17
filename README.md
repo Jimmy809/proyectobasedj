@@ -17,7 +17,7 @@ Este repositorio es una base para nuevos proyectos en Djando
 
 0.0.2
 - django-meta 2.0.0 https://django-meta.readthedocs.io/en/latest/index.html
-- 
+  
 0.0.1
 - postgress
 - pillow
