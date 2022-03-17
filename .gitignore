@@ -1,17 +1,21 @@
+# llaves y claves
 secret.json
 db.sqlite3
 proyectobase/settings.py
 
-
 # medias
 media/
 
-# migrations
+# app migrations
 applications/users/migrations/
+applications/home/migrations/
 
 # pycache
 proyectobase/__pycache__/
 applications/__pycache__/
-applications/users/__pycache__/
 proyectobase/settings/__pycache__/
+
+# app pycache
 applications/users/__pycache__/
+applications/home/__pycache__/
+
