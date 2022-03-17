@@ -12,8 +12,12 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': get_secret('DB_NAME'),
+        'USER': get_secret('USER'),
+        'PASSWORD': get_secret('PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -35,3 +39,22 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = get_secret('EMAIL')
 EMAIL_HOST_PASSWORD = get_secret('PASS_EMAIL')
 EMAIL_PORT = 587
+
+# ckeditor settings
+CKEDITOR_UPLOAD_PATH = 'media/posts/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['TextColor', 'Format', 'FontSize', 'Link', 'Unlink'],
+            ['Smily', 'Image', 'Iframe'],
+            ['RemoveFormat', 'Source']
+        ],
+        'stylesSet': [
+        ],
+    }
+}

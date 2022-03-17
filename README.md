@@ -3,6 +3,13 @@
 Este repositorio es una base para nuevos proyectos en Djando
 
 ### Modificaciones
+0.0.4
+- Aplicacion home instalada
+- Aplicacion entradas instalada
+- Aplicacion favoritos instalada
+- Quite la opcion apellidos
+- El login sera con el mail no con el username
+  
 0.0.3
 - Aplicacion de users modificada
 
@@ -14,6 +21,9 @@ Este repositorio es una base para nuevos proyectos en Djando
 - Carpeta static para los archivos estaticos 
 
 ### Paquetes instalados:
+0.0.4
+- django-model-utils
+- ckeditor
 
 0.0.2
 - django-meta 2.0.0 https://django-meta.readthedocs.io/en/latest/index.html

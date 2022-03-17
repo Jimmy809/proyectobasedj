@@ -16,24 +16,29 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('O', 'Otros'),
 
     )
+    
     # aqui creamos los campos de la base de datos
     username = models.CharField(max_length=50, unique=True)
-    email = models.EmailField()
-    nombres = models.CharField(max_length=30, blank=True)
-    apellidos = models.CharField(max_length=30, blank=True)
+    email = models.EmailField(unique=True)
+    nombres = models.CharField(max_length=100, blank=True)    
     genero = models.CharField(max_length=1, choices = GENDER_CHOICES, blank=True)
     codregistro = models.CharField(max_length=6, blank=True)
+    date_birth = models.DateField(
+        'Fecha de nacimiento',
+        blank=True,
+        null=True,
+    )
     
     # todo aquel q se registre por definicion no sera staff (False)
     is_staff = models.BooleanField(default=False)    
     is_active = models.BooleanField(default=False)
     
     # necesitamos decirle a django con que se hara el login
-    USERNAME_FIELD = 'username'
+    USERNAME_FIELD = 'email'
     
     # para que la consola nos pida el email ya que es obligatorio para crear el usuario
     # despues de la , podemos seguir agregando parametros para q nos lo pida por consola y sea de manera obligatoria
-    REQUIRED_FIELDS = ['email',] 
+    REQUIRED_FIELDS = ['username',] 
     
     objects = UserManager()
 
@@ -41,6 +46,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.username
     
-    # funcion para nombre largo, concatenemos nombres y apellidos
-    def get_full_name(self):
-        return self.nombres + ' ' + self.apellidos
+   

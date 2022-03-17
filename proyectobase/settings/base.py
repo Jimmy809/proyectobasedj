@@ -43,11 +43,15 @@ DJANGO_APPS = (
 LOCAL_APPS = (
     'applications.users',
     'applications.home',
+    'applications.entradas',
+    'applications.favoritos',
 )
 
 # App de terceros
 THIRD_PARTY_APPS = (
     'meta',
+    'ckeditor',
+    'ckeditor_uploader',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS

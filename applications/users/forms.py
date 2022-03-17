@@ -31,8 +31,8 @@ class UserRegisterForm(forms.ModelForm):
             'username', 
             'email',
             'nombres',
-            'apellidos',
             'genero',
+            # 'Fecha de nacimiento',
         )
         
     def clean_password2(self):

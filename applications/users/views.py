@@ -40,7 +40,7 @@ class UserRegisterView(FormView):
             form.cleaned_data['email'],
             form.cleaned_data['password1'],
             nombres=form.cleaned_data['nombres'],
-            apellidos=form.cleaned_data['apellidos'],
+            date_birth=form.cleaned_data['Fecha de nacimiento'],
             genero=form.cleaned_data['genero'],
             codregistro=codigo
         )
