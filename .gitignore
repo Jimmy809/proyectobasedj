@@ -9,6 +9,8 @@ media/
 # app migrations
 applications/users/migrations/
 applications/home/migrations/
+applications/favotiros/migrations/
+applications/entradas/migrations/
 
 # pycache
 proyectobase/__pycache__/
@@ -18,4 +20,6 @@ proyectobase/settings/__pycache__/
 # app pycache
 applications/users/__pycache__/
 applications/home/__pycache__/
+applications/favotiros/__pycache__/
+applications/entradas/__pycache__/
 
