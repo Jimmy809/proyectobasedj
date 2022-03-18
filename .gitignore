@@ -9,7 +9,7 @@ media/
 # app migrations
 applications/users/migrations/
 applications/home/migrations/
-applications/favotiros/migrations/
+applications/favoritos/migrations/
 applications/entradas/migrations/
 
 # pycache
