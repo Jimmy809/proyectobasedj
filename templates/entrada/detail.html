@@ -45,10 +45,15 @@
         <!-- bloque llamada a la accion -->
         <div class="cell large-4">
             <div class="card" style="width: 100%;">
-                <img class="card-favoritos-img" src="{{ entry.image.url }}">
+                <img class="card-favoritos-img" src="{{ entry.image.url }}" style="width: 100%;">
                 <div class="card-section" style="width: 100%;">
-                  <form class="blog-action" action="{% url 'favoritos_app:add-favoritos' entry.id %}" method="post"> {% csrf_token %}                    
-                    <button type="submit" class="button alert">Agregar a Favoritos</button>
+                  <form class="blog-action" action="{% url 'favoritos_app:add-favoritos' entry.id %}" method="post"> {% csrf_token %}
+
+                    {% if not Favorites.entry %}                
+                    <button type="submit" class="submit success button">Agregar a Favoritos</button>
+                    {% else %}
+                    <button type="submit" action="{% url 'favoritos_app:delete-favoritos' entrada.id %}" class="button alert">Eliminar de Favoritos</button>
+                    {% endif %}
                   </form>
                 </div>
             </div>

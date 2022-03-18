@@ -13,7 +13,7 @@
             <div class="callout">
                 <h5>{{ user.full_name }}</h5>
                 <p>{{user.email}} - {{user.ocupation}} - {{user.date_birth}}</p>
-                <a href="#">Editar Datos</a>
+                <a href="{% url 'users_app:user-update' %}" class="clear button secundary">Editar Datos</a>
                 <p>
                 <a href="{% url 'users_app:user-logout' %}" class="clear button secundary">Salir</a>
                 </p>                
@@ -32,7 +32,7 @@
                         <h3 class="card-favoritos-body-titulo">{{ entrada.entry.title }}</h3>
                         <p class="card-favoritos-body-text">{{ entrada.entry.resume | truncatechars:100 }}</p>
                         <form class="card-favoritos-body-actions" method="post" action="{% url 'favoritos_app:delete-favoritos' entrada.id %}"> {% csrf_token %}
-                            <a class="button warning" href="{% url 'entrada_app:entry-detail' entrada.entry.id %}">Ver</a>                            
+                            <a class="button warning" href="{% url 'entrada_app:entry-detail' entrada.entry.slug %}">Ver</a>                            
                             <button type="submit" class="button alert">Eliminar</button>
                         </form>
                     </div>

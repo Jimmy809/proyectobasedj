@@ -20,6 +20,6 @@ proyectobase/settings/__pycache__/
 # app pycache
 applications/users/__pycache__/
 applications/home/__pycache__/
-applications/favotiros/__pycache__/
+applications/favoritos/__pycache__/
 applications/entradas/__pycache__/
 

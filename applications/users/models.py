@@ -20,7 +20,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     # aqui creamos los campos de la base de datos
     username = models.CharField(max_length=50, unique=True)
     email = models.EmailField(unique=True)
-    nombres = models.CharField(max_length=100, blank=True)    
+    nombres = models.CharField(max_length=100, blank=True)   
+    ocupation = models.CharField(
+        'Ocupacion',
+        max_length=30, 
+        blank=True
+    ) 
     genero = models.CharField(max_length=1, choices = GENDER_CHOICES, blank=True)
     codregistro = models.CharField(max_length=6, blank=True)
     date_birth = models.DateField(

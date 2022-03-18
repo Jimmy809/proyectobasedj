@@ -1,10 +1,10 @@
 from django import forms
 from django.contrib.auth import authenticate
-#
+
 from .models import User
 
-class UserRegisterForm(forms.ModelForm):
 
+class UserRegisterForm(forms.ModelForm):
     password1 = forms.CharField(
         label='Contraseña',
         required=True,
@@ -14,6 +14,7 @@ class UserRegisterForm(forms.ModelForm):
             }
         )
     )
+    
     password2 = forms.CharField(
         label='Contraseña',
         required=True,
@@ -23,79 +24,74 @@ class UserRegisterForm(forms.ModelForm):
             }
         )
     )
-
+    
     class Meta:
-        """Meta definition for Userform."""
-
         model = User
         fields = (
+            'username', 
             'email',
             'nombres',
-            'ocupation',
             'genero',
             'date_birth',
+            # 'Fecha de nacimiento',
         )
         widgets = {
             'email': forms.EmailInput(
                 attrs={
-                    'placeholder': 'Correo Electronico ...',
+                    'placeholder': 'correo Electronico...',
                 }
             ),
-            'nombres': forms.TextInput(
+            'username': forms.TextInput(
                 attrs={
-                    'placeholder': 'nombres ...',
-                }
-            ),
-            'ocupation': forms.TextInput(
-                attrs={
-                    'placeholder': 'Ocupacion ...',
+                    'placeholder': 'Nombres...',
                 }
             ),
             'date_birth': forms.DateInput(
                 attrs={
                     'type': 'date',
-                },
+                }
             ),
         }
-    
+        
     def clean_password2(self):
         if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2', 'Las contraseñas no son iguales')
+            self.add_error('password2', 'Las contraseña no son iguales')
+# agregar que no sea menor a 5 caracteres
 
 
 class LoginForm(forms.Form):
-    email = forms.CharField(
-        label='E-mail',
+    username = forms.CharField(
+        label='username',
         required=True,
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Correo Electronico',
+                'placeholder': 'username',
+                'style': '{margin: 10px}',
             }
         )
     )
+    
     password = forms.CharField(
         label='Contraseña',
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder': 'contraseña'
+                'placeholder': 'Contraseña'
             }
         )
     )
-
+    
     def clean(self):
         cleaned_data = super(LoginForm, self).clean()
-        email = self.cleaned_data['email']
+        username = self.cleaned_data['username']
         password = self.cleaned_data['password']
-
-        if not authenticate(email=email, password=password):
+        
+        if not authenticate(username=username, password=password):
             raise forms.ValidationError('Los datos de usuario no son correctos')
         
         return self.cleaned_data
-
-
+    
 class UpdatePasswordForm(forms.Form):
-
     password1 = forms.CharField(
         label='Contraseña',
         required=True,
@@ -110,7 +106,29 @@ class UpdatePasswordForm(forms.Form):
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder': 'Contraseña Nueva'
+                'placeholder': 'Nueva Contraseña'
             }
         )
     )
+        
+    
+class VerificationForm(forms.Form):
+    codregistro = forms.CharField(required=True)
+    
+    def __init__(self, pk, *args, **kwargs):
+        self.id_user = pk
+        super(VerificationForm, self).__init__(*args, **kwargs)
+    
+    def clean_codregistro(self):
+        codigo = self.cleaned_data['codregistro']
+        
+        if len(codigo) == 6:
+            # verificamos si el codigo y el id de user son valido
+            activo = User.objects.cod_validation(
+                self.id_user,
+                codigo
+            )
+            if not activo:
+                raise forms.ValidationError('Los datos de usuario no son correctos')
+        else:
+            raise forms.ValidationError('Los datos de usuario no son correctos')

@@ -15,7 +15,7 @@ from .models import Category, Entry
 class EntryListView(ListView):    
     template_name = "entrada/lista.html"
     context_object_name = 'entradas'
-    paginate_by = 10
+    paginate_by = 2
     
     
     def get_context_data(self, **kwargs):

@@ -21,7 +21,7 @@
         <!-- bloque de blog principal -->
         <div class="cell small-12 large-6">
             <div class="card" style="width: 100%;">
-                <img src=" {{ portada.image.url }} ">
+                <img src=" {{ portada.image.url }}" style="height: 300px">
                 <div class="card-section">
                   <h4> <a href="{% url 'entrada_app:entry-detail' portada.slug %}"> {{ portada.title }} </a></h4>
                   <p>{{portada.resume | truncatechars:100}}</p>
@@ -35,10 +35,10 @@
             {% for entrada in entradas_home %}
             <div class="cell small-12 large-6">
                 <div class="card" style="width: 100%;">
-                    <img src="{{entrada.image.url}}" style="height: 120px;" style="width: 120px;">
+                    <img src="{{entrada.image.url}}" style="height: 120px;" style="width: 200px;">
                     <div class="card-section">
                       <h5>
-                          <a href="{% url 'entrada_app:entry-detail' entrada.slug %}"> {{entrada.title | truncatechars:40 }} </a>
+                          <a href="{% url 'entrada_app:entry-detail' entrada.slug %}"> {{entrada.title | truncatechars:30 }} </a>
                       </h5>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
             </p>
 
             <!-- This is the first modal -->
-            <div class="reveal" id="exampleModal2" data-reveal style="height: 100px;" style="width: 100px;">
+            <div class="reveal" id="exampleModal2" data-reveal style="width: 300px;">
                 <p class="lead">Ingresa tu correo</p>
                 <form class="grid-x grid-margin-x" method="post" action=" {% url 'home_app:add-suscription' %} "> {% csrf_token %}
                     <div class="cell small-12">
@@ -88,7 +88,7 @@
         {% for entrada in entradas_recientes %}
         <div class="cell small-6 large-4">
             <div class="card" style="width: 100%;">
-                <img src="{{entrada.image.url}}">
+                <img src="{{entrada.image.url}}" style="height: 200px">
                 <div class="card-section">
                   <a href="{% url 'entrada_app:entry-detail' entrada.slug %}">{{entrada.title | truncatechars:40 }}</a>
                   <p>{{entrada.resume | truncatechars:70 }}</p>
