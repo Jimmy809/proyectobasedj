@@ -2,13 +2,14 @@
 
 Este repositorio es una base para nuevos proyectos en Djando
 
-### revisiones pendientes
+### revisiones pendientes 0.0.4
 - lo del usuario y el email al registrarse
 - lo del boton de agregar a favorito
 - lo del paquete meta
 - en el footer mejor la alineacion y la barra de despazamiento
 - ckeditor agregar el code
 - en perfil mejorar la parte del usuario
+- por que el views de entrada tiene en comentarios los managers
 
 
 ### Modificaciones
