@@ -2,6 +2,15 @@
 
 Este repositorio es una base para nuevos proyectos en Djando
 
+### revisiones pendientes
+- lo del usuario y el email al registrarse
+- lo del boton de agregar a favorito
+- lo del paquete meta
+- en el footer mejor la alineacion y la barra de despazamiento
+- ckeditor agregar el code
+- en perfil mejorar la parte del usuario
+
+
 ### Modificaciones
 0.0.4
 - Aplicacion home instalada
@@ -9,6 +18,8 @@ Este repositorio es una base para nuevos proyectos en Djando
 - Aplicacion favoritos instalada
 - Quite la opcion apellidos
 - El login sera con el mail no con el username
+- Sitemap
+- Slug
   
 0.0.3
 - Aplicacion de users modificada

@@ -94,7 +94,7 @@ class Entry(TimeStampedModel):
         )
     
     def save(self, *args, **kwargs):
-        # calcumalos el total de segundos da la hora actual
+        # calcumalos el total de segundos da la hora actual para el slug
         now = datetime.now()
         total_time = timedelta(
             hours=now.hour,

@@ -47,17 +47,10 @@
             <div class="card" style="width: 100%;">
                 <img class="card-favoritos-img" src="{{ entry.image.url }}" style="width: 100%;">
                 <div class="card-section" style="width: 100%;">
-                  <form class="blog-action" action="{% url 'favoritos_app:add-favoritos' entry.id %}" method="post"> {% csrf_token %}
-                    
-                    {% comment %} {% for entrada in entradas_user %} {% endcomment %}
-                        {% if not entrada.id %}                
+                    <form class="blog-action" action="{% url 'favoritos_app:add-favoritos' entry.id %}" method="post"> {% csrf_token %}
+                       {% comment %} arreglar el boton de agregar clase 207 como referencia {% endcomment %}
                         <button type="submit" class="submit success button">Agregar a Favoritos</button>
-                        {% else %}
-                        <button type="submit" action="{% url 'favoritos_app:delete-favoritos' entrada.id %}" class="button alert">Eliminar de Favoritos</button>
-                        {% endif %}
-                    {% comment %} {% endfor %} {% endcomment %}
-
-                  </form>
+                    </form>
                 </div>
             </div>
         </div>

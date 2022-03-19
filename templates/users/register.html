@@ -16,6 +16,9 @@
                 <div class="card-section">
                     <form class="grid-x grid-margin-x" method="post" enctype="multipart/form-data"> {% csrf_token %}
                         
+                        {% comment %} {% if form.errors %}
+                            <p>{{form.errors}}</p>
+                        {% endif %} {% endcomment %}
                         
                         <div class="cell large-12">
                             <label>Email:
