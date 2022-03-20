@@ -31,7 +31,7 @@ class UserRegisterForm(forms.ModelForm):
         fields = (
             'email',
             'nombres',
-            'ocupation',
+            'username',
             'genero',
             'date_birth',
         )
@@ -43,12 +43,12 @@ class UserRegisterForm(forms.ModelForm):
             ),
             'nombres': forms.TextInput(
                 attrs={
-                    'placeholder': 'nombres ...',
+                    'placeholder': 'Nombres ...',
                 }
             ),
-            'ocupation': forms.TextInput(
+            'username': forms.TextInput(
                 attrs={
-                    'placeholder': 'Ocupacion ...',
+                    'placeholder': 'Nickanme ...',
                 }
             ),
             'date_birth': forms.DateInput(

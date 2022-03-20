@@ -7,13 +7,9 @@ from django.views.generic import (
 
 # models
 from .models import Category, Entry
-# managers
-# from .managers import buscar_entrada
 
-from applications.favoritos.models import Favorites
 
 # Create your views here.
-
 class EntryListView(ListView):    
     template_name = "entrada/lista.html"
     context_object_name = 'entradas'

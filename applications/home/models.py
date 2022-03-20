@@ -4,6 +4,7 @@ from django.db import models
 from django.db import models
 # apps terceros
 from model_utils.models import TimeStampedModel
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Home(TimeStampedModel):
@@ -12,12 +13,12 @@ class Home(TimeStampedModel):
         'Nombre',
         max_length=30
     )
-    description = models.TextField()
+    description = RichTextUploadingField()
     about_title = models.CharField(
         'Titulo Nosotros',
         max_length=50
     )
-    about_text = models.TextField()
+    about_text = RichTextUploadingField()
     contact_email = models.EmailField(
         'email de contacto',
         blank=True,

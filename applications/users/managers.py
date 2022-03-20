@@ -16,8 +16,9 @@ class UserManager(BaseUserManager, models.Manager):
         user.save(using=self.db)
         return user
     
+    # 3er True es para que se active sin un email de activacion
     def create_user(self, email, password=None, **extra_fields):
-        return self._create_user(email, password, False, False, False, **extra_fields)
+        return self._create_user(email, password, False, False, True, **extra_fields)
 
     def create_superuser(self, email, password=None, **extra_fields):
         return self._create_user(email, password, True, True, True, **extra_fields)

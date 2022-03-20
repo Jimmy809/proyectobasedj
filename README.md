@@ -3,14 +3,15 @@
 Este repositorio es una base para nuevos proyectos en Djando
 
 ### revisiones pendientes 0.0.4
-- lo del usuario y el email al registrarse
 - lo del boton de agregar a favorito
 - lo del paquete meta
 - en el footer mejor la alineacion y la barra de despazamiento
 - ckeditor agregar el code
 - en perfil mejorar la parte del usuario
-- por que el views de entrada tiene en comentarios los managers
-- lo del email de activacion
+- agregar el Ckeditor al home y a parte de entradas (SOLUCIONADO!!)
+- lo del usuario y el email al registrarse (SOLUCIONADO!!!)
+- por que el views de entrada tiene en comentarios los managers (se elimino del views.py y se importo a models.py SOLUCIONADO!!)
+- lo del email de activacion (solucion 1 registrarse si email de activacion SOLUCIONADO!!)
 
 
 ### Modificaciones

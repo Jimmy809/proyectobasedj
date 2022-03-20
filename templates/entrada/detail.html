@@ -33,7 +33,7 @@
         <div class="cell large-8">
             <div class="cell callout primary">
                 <h5>Resumen:</h5>
-                <p>{{ entry.resume }}</p>
+                <p>{{ entry.resume|safe }}</p>
             </div>
             <div>
                 {% comment %} safe para que en el fron no salgo los codigo html {% endcomment %}
