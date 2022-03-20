@@ -1,0 +1,75 @@
+<!-- head para PC -->
+{% extends "entrada/base_entrada.html" %}
+{% load  static %}
+{% comment %} seo titulo entradas {% endcomment %}
+{% block title %}
+{{entry.title}}
+{% endblock title %}
+
+{% comment %} seo resumen entradas {% endcomment %}
+{% block description %}
+<meta name="description" content="{{entry.resumen}}">
+{% endblock description %}
+
+{% comment %} seo tags entradas, pero no funciona en chrome {% endcomment %}
+{% block tags %}
+<meta name="keywords" content="
+    {% for t in entry.tag.all %}
+        {{ t.name }} ,
+    {% endfor %}
+">
+{% endblock tags %}
+
+
+{% block content %}
+
+{% include "includes/header.html" %}
+
+<div class="grid-container">
+    <div class="grid-x grid-margin-x" style="margin-top: 1em;">
+        <h3 class="cell">{{ object.title }}</h3>
+
+        <!-- bloque de contenido del articulo -->
+        <div class="cell large-8">
+            <div class="cell callout primary">
+                <h5>Resumen:</h5>
+                <p>{{ entry.resume|safe }}</p>
+            </div>
+            <div>
+                {% comment %} safe para que en el fron no salgo los codigo html {% endcomment %}
+                <p>{{ entry.content|safe }}</p> 
+            </div>
+        </div>
+        <!-- FIN bloque contenido del articulo -->
+
+        <!-- bloque llamada a la accion -->
+        <div class="cell large-4">
+            <div class="card" style="width: 100%;">
+                <img class="card-favoritos-img" src="{{ entry.image.url }}" style="width: 100%;">
+                <div class="card-section" style="width: 100%;">
+                    {% comment %} arreglar el boton de agregar clase 207 como referencia {% endcomment %}
+                    {% for entrada in entradas_user %}
+                        {% if not entrada in entradas_user  %}
+                            <form class="blog-action" action="{% url 'favoritos_app:add-favoritos' entry.id %}" method="post"> {% csrf_token %}
+                                            
+                            <button type="submit" class="submit success button">Agregar a Favoritos</button>
+                            
+                            </form>
+                        {% else %}
+                            <form class="blog-action" action="{% url 'favoritos_app:delete-favoritos' entry.id %}" method="post"> {% csrf_token %}
+                            
+                                <button type="submit" class="submit success button" method="post" action="">Eliminar de Favoritos</button>
+                                                        
+                            </form>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- FIN bloque llamada a la accion -->
+
+    </div>
+</div>
+{% include "includes/footer.html" %}
+
+{% endblock content %}

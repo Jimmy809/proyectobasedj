@@ -47,3 +47,19 @@ class AddFavoritos(LoginRequiredMixin, View):
 class FavoritesDeleteView(DeleteView):
     model = Favorites
     success_url = reverse_lazy('favoritos_app:perfil')
+    
+# para intentar solucionar el problema de llaves repetidas 
+class AddFovoritosView(LoginRequiredMixin, View): 
+    login_url = reverse_lazy('users_app:user-login') 
+   
+    def post(self, request, *args, **kwargs): 
+      # recuperar el usuario 
+        usuario = self.request.user 
+        entrada = Entry.objects.get(id=self.kwargs['pk']) 
+      # registramos favorito 
+        try:
+                Favorites.objects.create( user=usuario, entry=entrada, ) 
+                return HttpResponseRedirect( reverse( 'favoritos_app:perfil', ) )
+        
+        except:
+                return HttpResponseRedirect( reverse( 'favoritos_app:vista_error', ) )

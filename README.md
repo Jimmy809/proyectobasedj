@@ -7,11 +7,12 @@ Este repositorio es una base para nuevos proyectos en Djando
 - lo del paquete meta
 - en el footer mejor la alineacion y la barra de despazamiento
 - ckeditor agregar el code
-- en perfil mejorar la parte del usuario
+- mejorar la pagina editar perfil
+- en perfil mejorar la parte del usuario (SOLUCIONADO!!)
 - agregar el Ckeditor al home y a parte de entradas (SOLUCIONADO!!)
 - lo del usuario y el email al registrarse (SOLUCIONADO!!!)
 - por que el views de entrada tiene en comentarios los managers (se elimino del views.py y se importo a models.py SOLUCIONADO!!)
-- lo del email de activacion (solucion 1 registrarse si email de activacion SOLUCIONADO!!)
+- lo del email de activacion (solucion 1 registrarse sin email de activacion SOLUCIONADO!!)
 
 
 ### Modificaciones

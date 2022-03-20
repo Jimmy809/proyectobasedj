@@ -1,7 +1,9 @@
 <!-- head para PC -->
 {% extends "favoritos/base_favoritos.html" %}
 {% load  static %}
-
+{% block title %}
+{{home.title}} - Perfil del Usuario
+{% endblock title %}
 {% block content %}
 
 {% include "includes/header.html" %}
@@ -10,11 +12,14 @@
     <div class="grid-x grid-margin-x align-center" style="margin-top: 1em;">
         <!-- bloque de datos de usuario -->
         <div class="cell small-12 large-4">
-            <div class="callout">
+            <div class="callout primary border-none">
                 <h5>{{ user.nombres }}</h5>
-                <p>{{user.email}} - {{user.ocupation}} - {{user.date_birth}}</p>
-                <a href="{% url 'users_app:user-update' %}" class="warning button">Editar Datos</a>
                 <p>
+                    <b>Email:</b> {{user.email}} <br> 
+                    <b>Ocupacion:</b> {{user.ocupation}} <br> 
+                    <b>Fecha de nacimiento:</b> {{user.date_birth}}<br> 
+                <p>
+                <a href="{% url 'users_app:user-update' %}" class="warning button">Editar Datos</a>
                 <a href="{% url 'users_app:user-logout' %}" class="alert button">Salir</a>
                 </p>                
             </div>
