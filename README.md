@@ -10,6 +10,7 @@ Este repositorio es una base para nuevos proyectos en Djando
 - ckeditor agregar el code
 - en perfil mejorar la parte del usuario
 - por que el views de entrada tiene en comentarios los managers
+- lo del email de activacion
 
 
 ### Modificaciones
