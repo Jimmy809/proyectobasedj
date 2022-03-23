@@ -50,7 +50,6 @@ LOCAL_APPS = (
 
 # App de terceros
 THIRD_PARTY_APPS = (
-    'meta',
     'ckeditor',
     'ckeditor_uploader',
 )
