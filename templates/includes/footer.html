@@ -1,4 +1,5 @@
-<div class="callout secondary">
+<footer>
+  <div class="callout secondary">
     <div class="grid-x align-center">
         <h3 class="cell small-12 large-7">Formulario de Contacto:</h3>
         <form class="cell small-12 large-7" method="post" action=" {% url 'home_app:add-contact' %} "> {% csrf_token %}
@@ -23,10 +24,13 @@
                 </div>
             </div>
         </form>
-        <p class="cell large-8">Otras formas de contacto:</p>
-        <p class="cell large-8">
-          <span class="label warning">{{ correo }}</span>
-          <span class="label warning">{{ phone }}</span>
-        </p>
+        <div class="cell small-12 large-7">
+          <p class="cell large-8">Otras formas de contacto:</p>
+          <p class="cell large-8">
+            <span class="label warning">{{ correo }}</span>
+            <span class="label warning">{{ phone }}</span>
+          </p>
+        </div>
     </div>
-</div>
+  </div>
+</footer>

@@ -24,13 +24,18 @@
 {% block content %}
 
 {% include "includes/header.html" %}
+<div class="grid-container">
+    <div class="grid-x grid-margin-x align-center">
+        <div class="cell medium-6 callout warning large-6" style="margin-top: 2em;">
+            <h3 style="text-align:center;">Cambiar Contraseña: {{user.nombres}}</h3>
+            <form method="post">{% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="success button">Actualizar</button>
 
-    <h1>Cambiar Contraseña: {{user.nombres}}</h1>
-    <form method="post">{% csrf_token %}
-        {{form.as_p}}
-        <button type="submit" class="success button">Actualizar</button>
-
-    </form>
+             </form>
+        </div>
+    </div>
+</div>
 
 
 {% include "includes/footer.html" %}
