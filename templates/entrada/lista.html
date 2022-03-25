@@ -26,10 +26,13 @@
                 {% for entrada in entradas %}
                 <div class="cell small-6 large-4">
                     <div class="card" style="width: 100%;">
-                        <img src="{{ entrada.image.url }}" style="width: 300px;">
+                        <a href="{% url 'entrada_app:entry-detail' entrada.slug %}">
+                            <img src="{{ entrada.image.url }}" style="width: 300px;">
+                        </a>
                         <div class="card-section">
                           <h4><a href="{% url 'entrada_app:entry-detail' entrada.slug %}"> {{entrada.title | truncatechars:40 }} </a></h4>
                           <p>{{ entrada.resume | truncatechars:100 }}</p>
+                          <a href="{% url 'entrada_app:entry-detail' entrada.slug %}" class="submit success button"> Leer Mas </a>
                         </div>
                     </div>
                 </div>  

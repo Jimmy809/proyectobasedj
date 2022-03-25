@@ -34,3 +34,4 @@ class EntryListView(ListView):
 class EntryDetailView(DetailView):
     model = Entry
     template_name = "entrada/detail.html"
+    

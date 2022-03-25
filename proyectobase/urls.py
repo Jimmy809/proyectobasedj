@@ -20,7 +20,7 @@ urlpatterns_main = [
     re_path('', include('applications.favoritos.urls')),
     # urls para ckeditor
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #objeto site map que genera xml
 sitemaps = {

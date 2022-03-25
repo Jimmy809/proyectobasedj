@@ -16,16 +16,15 @@ from .managers import EntryManager
 class Category(TimeStampedModel):
     # Categorias de una entrada
     
+    name = models.CharField(
+        'Nombre',
+        max_length=30
+    )  
     short_name = models.CharField(
         'Nombre corto',
         max_length=15,
         unique=True
-    )
-    name = models.CharField(
-        'Nombre',
-        max_length=30
-    )   
-    
+    )    
     
     class Meta:
         verbose_name = 'Categoria'
@@ -84,7 +83,7 @@ class Entry(TimeStampedModel):
           
     def __str__(self):
         return self.title
-    
+        
     def get_absolute_url(self):        
         return reverse_lazy(
             'entrada_app:entry-detail', 
