@@ -4,7 +4,7 @@ Este repositorio es una base para nuevos proyectos en Djando
 
 ### revisiones pendientes 0.0.4
 - lo del boton de agregar a favorito (Pendiente)
-- lo del paquete meta (Desinstalado, para futura versiones)
+- lo del paquete meta (Desinstalado, para futuras versiones)
 - en el footer mejor la alineacion y la barra de despazamiento (SOLUCIONADO!!)
 - ckeditor agregar el code (Sin Solucion!!)
 - mejorar la pagina editar contraseña / perfil (SOLUCIONADO!!)
