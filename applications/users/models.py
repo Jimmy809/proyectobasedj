@@ -25,7 +25,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         'Ocupacion',
         max_length=30, 
         blank=True
-    ) 
+    )
+    avatar = models.ImageField(upload_to='media/users/')
     genero = models.CharField(max_length=1, choices = GENDER_CHOICES, blank=True)
     codregistro = models.CharField(max_length=6, blank=True)
     date_birth = models.DateField(
